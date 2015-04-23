@@ -1,80 +1,34 @@
-describe('FizzBuzz', function() {
-  var fizzbuzz
+describe('FizzBuzz',function() {
 
-  beforeEach(function() {
-    fizzbuzz = new FizzBuzz
-  });
+  var fizz;
 
-  describe('knows when a number is', function() {
+  beforeEach(function(){
+    fizz = new FizzBuzz();
+  })
 
-    it('divisible by three', function() {
-      expect(fizzbuzz.isDivisibleByThree(3)).toBe(true);
-    });
+  it('knows that 3 is divisible by three',function() {
+    expect(fizz.isDivisibleByThree(3)).toBe(true);
+  })
 
-    it('divisible by five', function() {
-      expect(fizzbuzz.isDivisibleByFive(5)).toBe(true);
-    });
+  it('knows that 5 is not divisible by three', function() {
+    expect(fizz.isDivisibleByThree(5)).toBe(false);
+  })
 
-    it('divisible by fifteen', function() {
-      expect(fizzbuzz.isDivisibleByFifteen(15)).toBe(true);
-    });
+  it('knows that 5 is divisible by five', function() {
+    expect(fizz.isDivisibleByFive(5)).toBe(true)
+  })
 
-  });
+  it('knows that 6 is not divisible by five', function() {
+    expect(fizz.isDivisibleByFive(6)).toBe(false)
+  })
 
-  describe('knows when a number is NOT', function() {
+  it('knows that 15 is divisible by fifteen', function() {
+    expect(fizz.isDivisibleByFifteen(15)).toBe(true)
+  })
 
-   it('divisible by three', function(){
-    expect(fizzbuzz.isDivisibleByThree(1)).toBe(false);
-   });
-
-   it('divisible by five', function() {
-    expect(fizzbuzz.isDivisibleByFive(1)).toBe(false);
-   });
-
-   it('divisible by fifteen', function() {
-    expect(fizzbuzz.isDivisibleByFifteen(1)).toBe(false);
-   });
-
-  });
+  it('knows that 17 is not divisible by fifteen', function() {
+    expect(fizz.isDivisibleByFifteen(17)).toBe(false)
+  })
 
 
-  describe('know to say', function() {
-
-    it('fizz when divisible by three', function() {
-      expect(fizzbuzz.sayFizz(3)).toBe('fizz');
-    });
-
-    it('buzz when divisible by five', function() {
-      expect(fizzbuzz.sayBuzz(5)).toBe('buzz');
-    });
-
-    it('fizzbuzz when divisible by fifteen', function(){
-      expect(fizzbuzz.sayFizzBuzz(15)).toBe('fizzbuzz');
-    });
-
-  });
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
